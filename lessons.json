@@ -1,0 +1,74 @@
+{ 
+    "course": {
+      "title": "Intro to Vue 3",
+      "provider": "Vue Mastery",
+      "website": "https://www.vuemastery.com"
+    },
+    "lessons": [ 
+      { 
+          "name": "Lesson 1",
+          "summary": "Pretty basic intro lesson. Short and to the point, took this time to start setting up my dev environment.",
+          "code": false
+      }, 
+      { 
+          "name": "Lesson 2" ,
+          "summary": "Follow-along code to build out a rudamentary shop type product widget. The Code Challenge was to add a description to the data object and display it using a <p> tag.",
+          "code": true,
+          "my_url": "/commits/a80fb09b8c006adcbc21342599eb4a19f09b285c"
+      }, 
+      { 
+          "name": "Lesson 3",
+          "summary": "Follow-along code demonstrating asset binding to display different images when hovering over a colour swatch. The Coding Challenge was to Add a url to the data object and bind the url to 'an' anchor tag's href attribute. I don't remember doing this one lol.",
+          "code": true,
+          "my_url": "/commits/0af0a3490326ada50cc14891150d742cda59bc45"
+      }, 
+      { 
+          "name": "Lesson 4",
+          "summary": "",
+          "code": true,
+          "my_url": "/commits/45fcf0e468e85c5a8803daad9f2bb905f2710bb6"
+      }, 
+      { 
+          "name": "Lesson 5",
+          "summary": "",
+          "code": true,
+          "my_url": "/commits/e17ae9d8a2161f917b395ffc05b7677af8b39f2b"
+      }, 
+      { 
+          "name": "Lesson 6",
+          "summary": "",
+          "code": true,
+          "my_url": "/commits/e89a0e11b3d3622fc637d863f2cc85a1b4bcb961"
+      }, 
+      { 
+          "name": "Lesson 7",
+          "summary": "",
+          "code": true,
+          "my_url": "/commits/054b3c81a08ea0f26d537727182e3bc5939e4029"
+      }, 
+      {
+          "name": "Lesson 8",
+          "summary": "",
+          "code": true,
+          "my_url": "/commits/aeee40c3b3c9b677fe7971df636ebe141284cbc1"
+      }, 
+      { 
+          "name": "Lesson 9",
+          "summary": "",
+          "code": true,
+          "my_url": "/commits/022432fdd9565bc2fbfde9ed7af8403f061f68a6"
+      }, 
+      { 
+          "name": "Lesson 10",
+          "summary": "",
+          "code": true,
+          "my_url": "/commits/220a12ba64a0fd46f3986bccc4706f804ee46ead"
+      }, 
+      { 
+          "name": "Lesson 11",
+          "summary": "",
+          "code": true,
+          "my_url": "/commits/4ba2548776b7ae5c82a5681ead5be21c21b414c0"
+      }
+    ]
+}

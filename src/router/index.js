@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import SummaryView from '@/views/SummaryView.vue'
+import LessonView from '@/views/LessonView.vue'
 
 
 const router = createRouter({
@@ -9,7 +10,13 @@ const router = createRouter({
             path: '/',
             name: 'summary-view',
             component: SummaryView
-        }
+        },
+        {
+            path: '/lesson/:lessonId',
+            name: 'lesson-view',
+            props: true,
+            component: LessonView
+        },
     ]
 })
 
