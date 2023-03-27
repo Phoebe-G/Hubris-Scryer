@@ -27,8 +27,7 @@ onMounted(() => {
 <template>
     <div class="code-container">
         <div class="source-tree"><SourceTree v-if="tree" :treeUri="tree"></SourceTree></div>
-        <div class="source-code">code
-
+        <div class="source-code">
         </div>
     </div>
 </template>

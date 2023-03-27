@@ -66,7 +66,7 @@ img.burger-menu-button {
     border: none;
     box-shadow: none;
     cursor: pointer;
-}z
+}
 
 img.burger-menu-button:hover {
     /* chill */
@@ -83,6 +83,8 @@ img.burger-menu-button:hover {
     padding: 4px;
     box-shadow: rgba(0,0,0, 30%) 8px 8px 5px;
     background-color: white;
+
+    text-decoration: none;
 }
 
 .burger-menu-contents ul,
