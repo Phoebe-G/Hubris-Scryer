@@ -25,17 +25,22 @@ onMounted(() => {
 var onClick = () => {
     expanded.value = !expanded.value
 }
+var onDismiss = () => {
+    expanded.value = false
+}
+
 
 </script>
 
 <template>
     <div v-if="course && lessons">
+        <div @click="onDismiss" v-if="expanded" class="burger-menu"></div>
         <img @click="onClick" class="burger-menu-button" src="@/assets/images/Hamburger_icon.svg">
         <div v-if="expanded" class="burger-menu-contents">
             <h4>{{ course.title }}</h4>
             <ul>            
                 <li v-for="(lesson, index) in lessons">
-                    <router-link :to="{ name: 'lesson-view', params: { lessonId: index } }">
+                    <router-link @click="onDismiss" :to="{ name: 'lesson-view', params: { lessonId: index } }">
                         {{ lesson.name }}
                     </router-link>
                 </li>
@@ -47,6 +52,13 @@ var onClick = () => {
 </template>
 
 <style scoped>
+.burger-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
 img.burger-menu-button {
     max-width: 42px;
     margin: 0;
@@ -71,6 +83,8 @@ img.burger-menu-button:hover {
     padding: 4px;
     box-shadow: rgba(0,0,0, 30%) 8px 8px 5px;
     background-color: white;
+
+    text-decoration: none;
 }
 
 .burger-menu-contents ul,
