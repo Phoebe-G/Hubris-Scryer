@@ -15,9 +15,7 @@ const router = createRouter({
             path: '/lesson/:lessonId',
             name: 'lesson-view',
             props: true,
-            component: {
-                default: LessonView,
-            }
+            component: LessonView
         }
     ]
 })

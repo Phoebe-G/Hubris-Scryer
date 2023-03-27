@@ -41,14 +41,17 @@ const testClick = () => {
   }
 }
 
+/**
+        <!--<router-link v-else @click="onDismiss" :to="{ name: 'file-view', params: { node: node } }">-->
+        <!-- </router-link>-->
+    */
+
 </script>
 
 <template>
     <li @click="testClick">
         <i v-if="node.type=='tree'" :class="{ 'fa fa-folder-o': collapsed, 'fa fa-folder-open-o': !collapsed }" aria-hidden="true"></i>  
-        <!--<router-link v-else @click="onDismiss" :to="{ name: 'file-view', params: { node: node } }">-->
-        <i class="fa fa-file-code-o" aria-hidden="true"></i> {{ node.path }}
-        <!-- </router-link>-->
+        <i v-else class="fa fa-file-code-o" aria-hidden="true"></i> {{ node.path }}
     </li>
     <ul v-if="children" v-show="!collapsed">
       <SourceTreeNode v-for="c in children" :node="c"></SourceTreeNode>
