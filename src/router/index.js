@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import SummaryView from '@/views/SummaryView.vue'
 import LessonView from '@/views/LessonView.vue'
+import AuthView from '@/views/AuthView.vue'
 
 
 const router = createRouter({
@@ -16,6 +17,12 @@ const router = createRouter({
             name: 'lesson-view',
             props: true,
             component: LessonView
+        },
+        {
+            path: '/api/sessions/oauth/github',
+            props: route => ({ code: route.query.code, state: route.query.state }),
+            named: 'authd',
+            component: AuthView
         }
     ]
 })

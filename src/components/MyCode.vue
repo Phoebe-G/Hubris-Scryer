@@ -2,6 +2,7 @@
 import { ref, onMounted, VueElement } from 'vue'
 import GithubService from "@/services/GithubService"
 import SourceTree from "@/components/SourceTree.vue"
+import SourceDisplay from "@/components/SourceDisplay.vue"
 
 const props = defineProps({
     branch_id: {
@@ -12,6 +13,8 @@ const props = defineProps({
 )
 
 const tree = ref(null)
+const nodeSelected = ref(null)
+const selectedContent = ref(null)
 
 
 onMounted(() => {
@@ -22,13 +25,19 @@ onMounted(() => {
   })
 })
 
+const selectNode = (node) => {
+    console.log("node selected!", node);
+    selectedContent.value = node.content.toString(node.encoding)
+    nodeSelected.value = node
+}
+
+
 </script>
 
 <template>
     <div class="code-container">
-        <div class="source-tree"><SourceTree v-if="tree" :treeUri="tree"></SourceTree></div>
-        <div class="source-code">
-        </div>
+        <div class="source-tree"><SourceTree v-if="tree" :treeUri="tree" :selectNode="selectNode"></SourceTree></div>
+        <div class="source-code"><SourceDisplay v-if="nodeSelected != null" :node="nodeSelected" :content="selectedContent"></SourceDisplay></div>
     </div>
 </template>
 

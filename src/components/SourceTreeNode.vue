@@ -5,21 +5,21 @@ import GithubService from "@/services/GithubService"
 const PRJ_ROOT="https://api.github.com/repos/Phoebe-G/Intro-to-Vue-3"
 const PRJ_LEN=PRJ_ROOT.length
 
-
 const props = defineProps({
   node: {
     type: Object,
     required: true
+  },
+  selectNode: {
+    type: Function,
+    required: true
   }
 })
-
-//const tree = ref(null)
 
 const children = ref(null)
 const collapsed = ref(true)
 
 onMounted(() => {""
-
 })
 
 const testClick = () => {
@@ -37,7 +37,11 @@ const testClick = () => {
     }
 
   } else {
-    console.log("Get and display blob", props.node.blob)
+    console.log("Get and display blob", props.node.url)
+    GithubService.getBlob(props.node.url)
+    .then((blob) => {
+      props.selectNode(blob.data)
+    })
   }
 }
 

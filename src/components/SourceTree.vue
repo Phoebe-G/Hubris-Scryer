@@ -11,6 +11,10 @@ const props = defineProps({
   treeUri: {
     type: String,
     required: true
+  },
+  selectNode: {
+    type: Function,
+    required: true
   }
 })
 
@@ -25,11 +29,15 @@ onMounted(() => {
     })
   })
 
+  const selectNode = (node) => {
+    props.selectNode(node)
+  }
+
 </script>
 
 <template>
   <ul v-if='tree'>
-    <SourceTreeNode v-for="t in tree" :node="t"></SourceTreeNode>
+    <SourceTreeNode v-for="t in tree" :node="t" :selectNode="selectNode"></SourceTreeNode>
   </ul>
 </template>
 
